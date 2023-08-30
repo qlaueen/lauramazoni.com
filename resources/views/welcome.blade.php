@@ -1,16 +1,12 @@
 <x-guest-layout>
   <section class="container">
-    <div class="container col-xl-8 px-4">
-      <div class="row intro flex-lg-row-reverse align-items-center">
-        <div class="col-9 col-sm-8 col-lg-4">
-          <img src="{{  url('/picture.png')  }}" alt="My profile picture" class="img-intro d-flex justify-end">
-        </div>
-        <div class="col">
-          <p class="lead">Hi! My name is <b>Laura Mazoni</b>, I am a Computer Science student at New York University with interest in working in <span style="color:#8075FF; font-weight: bold"> front-end development</span>.</p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a type="button" class="btn-primary m-1" href="qlaueen@gmail.com">Get in touch!</a>
-            <a type="button" class="btn-secondary m-1" href="{{ route('projects.index') }}">My projects</a>
-          </div>
+    <div class="row intro align-items-center">
+      <div class="col">
+        <x-large-logo/>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante fermentum sit amet. Pellentesque commodo lacus at sodales sodales. Quisque sagittis orci ut diam condimentum, vel euismod erat placerat. In iaculis arcu eros, eget tempus orci facilis.</p>
+        <div class="d-flex justify-content-around buttons-wrapper">
+          <a type="button" class="button-home" href="{{ route('projects.index') }}">View my projects</a>
+          <a type="button" class="button-home" href="{{ route('projects.index') }}">More about me</a>
         </div>
       </div>
     </div>
