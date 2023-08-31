@@ -22,6 +22,12 @@
                 </div>
               </div>
               <div class="col-span-6">
+                <label for="slug" class="block">Slug</label>
+                <div class="mt-1">
+                  <input type="text" id="slug"  name="slug" class="block w-full"/>
+                </div>
+              </div>
+              <div class="col-span-6">
                 <label for="categories" class="form-label select-label">Categories</label>
                 <div class="mt-1">
                   <select id="categories" name="categories[]" class="form-multiselect block w-full" multiple>

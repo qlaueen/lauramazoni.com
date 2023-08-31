@@ -22,6 +22,9 @@
                   Project Name
                 </th>
                 <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                  Slug
+                </th>
+                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
                   Link
                 </th>
                 <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
@@ -34,6 +37,9 @@
                 <tr>
                   <td scope="row" class="py-4 px-6 whitespace-nowrap">
                     {{ $project->id }}
+                  </td>
+                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                    {{ $project->slug }}
                   </td>
                   <td scope="row" class="py-4 px-6 whitespace-nowrap">
                     {{ $project->name }}

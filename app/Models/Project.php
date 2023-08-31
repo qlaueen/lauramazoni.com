@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'image', 'link'];
+    protected $fillable = ['name', 'slug', 'description', 'image', 'link'];
 
     public function categories() {
       return $this->belongsToMany(Category::class, 'category_project');

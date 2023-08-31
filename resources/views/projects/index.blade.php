@@ -8,7 +8,7 @@
       <div class="col-6">
         <span class="projects__title d-flex">Projects</span>
         <div class="projects__wrapper">
-          <a href="http://{{ $project->link }}" class="project__title">{{  $project->name }}</a>
+          <a href="/projects/{{ $project->slug }}" class="project__title">{{  $project->name }}</a>
         </div>
       </div>
     </div>

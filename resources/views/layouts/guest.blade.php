@@ -16,7 +16,7 @@
       </head>
     <body>
       <x-navbar/>
-      <div class="min-h-screen">
+      <div class="container">
           {{ $slot }}
       </div>
       <section class="footer ">

@@ -17,6 +17,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('projects/{project:slug}', [ProjectController::class, 'show']);
+
 Route::middleware(['auth', 'admin'])->name('admin.')->prefix('admin')->group(function() {
   Route::get('/', [AdminController::class, 'index'])->name('index');
   Route::resource('/categories', CategoryController::class);
