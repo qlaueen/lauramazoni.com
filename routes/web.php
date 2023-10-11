@@ -13,9 +13,9 @@ Route::get('/', function () {
 
 Route::get('/projects', [FrontendProjectController::class, 'index'])->name('projects.index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware(['auth'])->name('admin');
 
 Route::get('projects/{project:slug}', [ProjectController::class, 'show']);
 

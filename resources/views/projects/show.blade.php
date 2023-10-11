@@ -1,6 +1,21 @@
 <x-guest-layout>
-    <div class="container">
-        <h1>Title of the project</h1>
-        <h1>{{ $project->name }}</h1>
+    <div>
+        <span>{{ $project->name }}</span>
+        <div>
+            <div>
+                <span>About</span>
+                <span>{{ $project->description }}</span>
+            </div>
+            <div>
+                <div>
+                    <img src="{{ $project->image }}" alt="{{ $project->name }}">
+                </div>
+            </div>
+        </div>
+        <div>
+            @foreach ($project->categories as $category)
+                <span>{{ $category->name }}</span>
+            @endforeach
+        </div>
     </div>
 </x-guest-layout>

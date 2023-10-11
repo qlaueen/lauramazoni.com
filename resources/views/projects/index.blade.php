@@ -1,14 +1,14 @@
 <x-guest-layout>
-  <div class="container">
+  <div>
     @foreach ($projects as $project)
-    <div class="row">
+    <div>
         
-      <div class="col-6"></div>
+      <div></div>
 
-      <div class="col-6">
-        <span class="projects__title d-flex">Projects</span>
-        <div class="projects__wrapper">
-          <a href="/projects/{{ $project->slug }}" class="project__title">{{  $project->name }}</a>
+      <div>
+        <span>Projects</span>
+        <div>
+          <a href="/projects/{{ $project->slug }}">{{  $project->name }}</a>
         </div>
       </div>
     </div>

@@ -1,8 +1,6 @@
 <x-admin-layout>
   <x-slot name="header">
-      <h2>
-        {{ __('Dashboard') }}
-      </h2>
+
   </x-slot>
 
   <div class="py-12">
