@@ -3,30 +3,30 @@
 
   </x-slot>
 
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <div class="flex justify-end m-2 p-2">
-          <a href="{{ route('admin.projects.index') }}" class="btn-primary">See All Projects</a>
+  <div>
+    <div>
+      <div>
+        <div>
+          <a href="{{ route('admin.projects.index') }}">See All Projects</a>
         </div>
-        <div class="m-2 p-2">
-          <div class="space-y-8">
+        <div>
+          <div>
             @csrf
             @method('PUT')
-            <div class="space-y-8">
+            <div>
               <form method="POST" action="{{  route('admin.projects.update', $project->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="col-span-6">
-                  <label for="name" class="block">Project Title</label>
-                  <div class="mt-1">
-                    <input type="text" id="name"  name="name" value="{{ $project->name }}" class="block w-full"/>
+                <div>
+                  <label for="name">Project Title</label>
+                  <div>
+                    <input type="text" id="name"  name="name" value="{{ $project->name }}"/>
                   </div>
                 </div>
-                <div class="col-span-6">
-                  <label for="categories" class="form-label select-label">Categories</label>
-                  <div class="mt-1">
-                    <select id="categories" name="categories[]" class="form-multiselect block w-full" multiple>
+                <div>
+                  <label for="categories">Categories</label>
+                  <div>
+                    <select id="categories" name="categories[]" multiple>
                       @foreach ($categories as $category)
                         <option value="{{ $category->id }}" @selected($project->categories->contains($category))>
                                   {{ $category->name }}</option>
@@ -34,32 +34,31 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-span-6">
-                  <label for="name" class="block">Project Description</label>
-                  <div class="mt-1">
-                    <div class="mt-1">
-                      <textarea type="text" rows=3 id="description"  name="description" value="{{ $project->description }}" class="block w-full">{{ $project->description }}</textarea>
+                <div>
+                  <label for="name">Project Description</label>
+                  <div>
+                    <div>
+                      <textarea type="text" rows=3 id="description"  name="description" value="{{ $project->description }}">{{ $project->description }}</textarea>
                     </div>
                   </div>
                 </div>
-                <div class="col-span-6">
-                  <label for="image" class="block">Project Preview</label>
-                  <div class="mt-1">
+                <div>
+                  <label for="image">Project Preview</label>
+                  <div>
                     <img src="{{ Storage::url($project->image) }}">
                   </div>
-                  <div class="mt-1">
-                    <input type="file" id="image" name="image" class="block w-full"/>
+                  <div>
+                    <input type="file" id="image" name="image"/>
                   </div>
                 </div>
-                <div class="col-span-6">
-                  <label for="link" class="block">Project Link</label>
-                  <div class="mt-1">
-                    <input type="text" id="link"  name="link" value="{{ $project->link }}"
-                          class="block w-full"/>
+                <div>
+                  <label for="link">Project Link</label>
+                  <div>
+                    <input type="text" id="link"  name="link" value="{{ $project->link }}"/>
                   </div>
                 </div>
-                <div class="col-span-6">                
-                  <button type="submit" class="my-2 px-4 btn-primary">Submit</button>
+                <div>                
+                  <button type="submit">Submit</button>
                 </div>
               </form>
             </div>

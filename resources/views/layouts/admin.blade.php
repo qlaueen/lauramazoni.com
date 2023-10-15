@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-        <title>Laura Mazoni | Developer</title>
+      <title>Admin Panel | Laura Mazoni</title>
     </head>
     <body>
       <div>
-        <div @click.away="open = false" x-data="{ open: false }">
+        <div>
           <div>
-            <h1>Admin Panel</h1>
+            <h1 class="text-center ">Admin Panel</h1>
           </div>
-          <nav>
-            <x-admin-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
-              {{ __('Projects') }}
-            </x-admin-nav-link>
-            <x-admin-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.index')">
-              {{ __('Categories') }}
-            </x-admin-nav-link>
-            <div @click.away="open = false" x-data="{ open: false }">
-                <button @click="open = !open">
-                    <span>{{ Auth::user()->name }}</span>
+          <nav class="navbar navbar-expand bg-light">
+            <div class="container-fluid">
+              <ul class="navbar-nav nav-pills nav-fill">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/categories">Categories</a>
+                </li>
+              </ul>
+              <form class="nav-link" method="POST" action="{{ route('logout') }}">
+                  <button class="btn btn-outline-success me-2" type="button">
+                  @csrf
+                  <a href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                      {{ __('Log Out') }}
+                  </a>
                 </button>
-                <div x-show="open">
-                    <div >
-                      <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('Log Out') }}
-                        </x-dropdown-link>
-                    </form>
-                    </div>
-                </div>
+              </form>
             </div>
           </nav>
         </div>

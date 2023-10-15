@@ -1,8 +1,5 @@
 <x-admin-layout>
-  <x-slot name="header">
-    
-  </x-slot>
+  
+  <x-slot name="header"></x-slot>
 
-  <div>
-  </div>
 </x-admin-layout>

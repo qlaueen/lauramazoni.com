@@ -3,29 +3,29 @@
 
   </x-slot>
 
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <div class="flex justify-end m-2 p-2">
-          <a href="{{  route('admin.projects.create') }}" class="px-4 py-2 btn-primary">New Project</a>
+  <div>
+    <div>
+      <div>
+        <div>
+          <a href="{{  route('admin.projects.create') }}">New Project</a>
         </div>
-        <div class="overflow-x-auto relative">
-          <table class="w-full">
-            <thead class="header-table">
+        <div>
+          <table>
+            <thead>
               <tr>
-                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                <th scope="col">
                   ID
                 </th>
-                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                <th scope="col">
                   Project Name
                 </th>
-                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                <th scope="col">
                   Slug
                 </th>
-                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                <th scope="col">
                   Link
                 </th>
-                <th scope="col" class="text-left py-4 px-6 whitespace-nowrap">
+                <th scope="col">
                   Categories
                 </th>
               </tr>
@@ -33,28 +33,26 @@
             <tbody>
               @foreach ($projects as $project)
                 <tr>
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                  <td scope="row">
                     {{ $project->id }}
                   </td>
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                  <td scope="row">
                     {{ $project->slug }}
                   </td>
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                  <td scope="row">
                     {{ $project->name }}
                   </td>
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                  <td scope="row">
                     {{ $project->link }}
                   </td>
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
+                  <td scope="row">
                   @foreach($project->categories as $category)
-                    <span class="category-bead">{{$category->name}}</span>
+                    <span>{{$category->name}}</span>
                   @endforeach
-                  <td scope="row" class="py-4 px-6 whitespace-nowrap">
-                    <div class="flex space-x-2">
-                      <a href="{{ route('admin.projects.edit', $project->id) }}"
-                         class="px-4 py-2 btn-edit">Edit</a>
-                      <form class="px-4 py-2 btn-delete"
-                            method="POST"
+                  <td scope="row">
+                    <div>
+                      <a href="{{ route('admin.projects.edit', $project->id) }}">Edit</a>
+                      <form method="POST"
                             action="{{ route('admin.projects.destroy', $project->id) }}"
                             onsubmit="return confirm('Are you sure?');">
                         @csrf

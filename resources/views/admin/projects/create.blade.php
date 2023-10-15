@@ -1,62 +1,60 @@
 <x-admin-layout>
   <x-slot name="header">
-
   </x-slot>
 
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div class="overflow-hidden">
-        <div class="flex justify-end m-2 p-2">
-          <a href="{{  route('admin.projects.index') }}" class="btn-primary">See All Projects</a>
+  <div>
+    <div>
+      <div>
+        <div>
+          <a href="{{  route('admin.projects.index') }}">See All Projects</a>
         </div>
-        <div class="m-2 p-2">
-          <div class="space-y-8">
+        <div>
+          <div>
             <form method="POST" action="{{  route('admin.projects.store') }}" enctype="multipart/form-data">
               @csrf
-              <div class="col-span-6">
-                <label for="name" class="block">Project Title</label>
-                <div class="mt-1">
-                  <input type="text" id="name"  name="name" class="block w-full"/>
+              <div>
+                <label for="name">Project Title</label>
+                <div>
+                  <input type="text" id="name"  name="name"/>
                 </div>
               </div>
-              <div class="col-span-6">
-                <label for="slug" class="block">Slug</label>
-                <div class="mt-1">
-                  <input type="text" id="slug"  name="slug" class="block w-full"/>
+              <div>
+                <label for="slug">Slug</label>
+                <div>
+                  <input type="text" id="slug"  name="slug"/>
                 </div>
               </div>
-              <div class="col-span-6">
-                <label for="categories" class="form-label select-label">Categories</label>
-                <div class="mt-1">
-                  <select id="categories" name="categories[]" class="form-multiselect block w-full" multiple>
+              <div>
+                <label for="categories">Categories</label>
+                <div>
+                  <select id="categories" name="categories[]" multiple>
                     @foreach ($categories as $category)
                       <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                   </select>
                 </div>
               </div>
-              <div class="col-span-6">
-                <label for="description" class="block">Project Description</label>
-                <div class="mt-1">
+              <div>
+                <label for="description">Project Description</label>
+                <div>
                   <textarea type="text" id="description" name="description"
-                  class="block w-full"></textarea>              
+                 ></textarea>              
                 </div>
               </div>
-              <div class="col-span-6">
-                <label for="image" class="block">Preview</label>
-                <div class="mt-1">
-                  <input type="file" id="image" name="image"
-                        lass="block w-full"/>
+              <div>
+                <label for="image">Preview</label>
+                <div>
+                  <input type="file" id="image" name="image"/>
                 </div>
               </div>
-              <div class="col-span-6">
-                <label for="link" class="block w-100">Project Link</label>
-                <div class="mt-1">
-                  <input type="text" id="link"  name="link" class="block w-full" />
+              <div>
+                <label for="link" >Project Link</label>
+                <div>
+                  <input type="text" id="link"  name="link" />
                 </div>
               </div>
-              <div class="col-span-6">                
-                <button type="submit" class="my-2 px-4 btn-primary">Submit</button>
+              <div>
+                <button type="submit">Submit</button>
               </div>
             </form>
           </div>
