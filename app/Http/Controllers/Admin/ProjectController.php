@@ -45,14 +45,17 @@ class ProjectController extends Controller
 
         $project = Project::create([
           'name' => $request->name,
+          'slug'=> $request->slug,
           'description' => $request->description,
           'image' => $image,
           'link' => $request->link,
         ]);
+        
 
         if($request->has('categories')) {
-          $project->categories()->attach($request->categories);
-        }
+            dd('test');
+          	$project->categories()->attach($request->categories);
+        } 
       
         return to_route('admin.projects.index');
     }

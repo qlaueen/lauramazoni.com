@@ -3,7 +3,8 @@
         <x-slot name="logo"></x-slot>
 
         <div>
-            {{ __('Forgot your password? Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+         <div>
+           {{ __('Forgot your password? Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
 
         <!-- Session Status -->
