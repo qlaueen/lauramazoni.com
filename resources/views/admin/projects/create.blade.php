@@ -29,7 +29,7 @@
                 <div>
                   <select id="categories" name="categories[]" multiple>
                     @foreach ($categories as $category)
-                      <option value="{{ $category->id }}">{{ $category->name }}</option>
+                      	<option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                   </select>
                 </div>
@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div>
-                <label for="image">Preview</label>
+                <label for="image">Image</label>
                 <div>
                   <input type="file" id="image" name="image"/>
                 </div>
