@@ -43,17 +43,18 @@ class ProjectController extends Controller
     {
         $image = $request->file('image')->store('public/projects');
 
-        $project = Project::create([
+		$project = Project::create([
           'name' => $request->name,
           'slug'=> $request->slug,
           'description' => $request->description,
           'image' => $image,
           'link' => $request->link,
         ]);
-        
-        if($request->has('categories')) {
+
+		if($request->has('categories')) {
+			// dd($request->categories);
           	$project->categories()->attach($request->categories);
-        } 
+        }
       
         return to_route('admin.projects.index');
     }
@@ -112,7 +113,6 @@ class ProjectController extends Controller
 			// dd($project->categories);
           	$project->categories()->sync($request->categories);
         } 
-
         return to_route('admin.projects.index');
     }
 
