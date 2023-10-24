@@ -1,6 +1,6 @@
 <x-admin-layout>
   <x-slot name="header"></x-slot>
-    <div class="container">
+    <div class="container mt-5">
         <div class="card">
             <div class="card-header text-end">
                 <a href="{{ route('admin.projects.index') }}">See All Projects</a>
@@ -11,19 +11,18 @@
                     @method('PUT')
                     <div class="card-text">
                         <x-label class="form-label" for="name" :value="__('Project name')" />
-                        <x-input class="form-control" id="name" value="{{ $project->name }}" />
+                        <x-input class="form-control" id="name" name="name" value="{{ $project->name }}" />
 
                         <x-label class="form-label mt-3" for="slug" :value="__('Slug')" />
-                        <x-input class="form-control" id="slug" value="{{ $project->slug }}" />
+                        <x-input class="form-control" id="slug" value="{{ $project->slug }}" name="slug"/>
 
                         <x-label class="form-label mt-3" for="categories" :value="__('Categories')" /> 
-                        <ul class="list-group" id="categories" name="categories[]" multiple>
-                            @foreach ($categories as $category)
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-2" type="checkbox" value="{{ $category->id }}" @selected($project->categories->contains($category))>{{ $category->name }}</input>
-                                </li>
-                            @endforeach
-                        </ul>
+                        @foreach ($categories as $category)
+                            <div class="form-check" multiple>
+                                <label class="form-check-label" id="categories">{{ $category->name }}</label>
+                                <input class="form-check-input" type="checkbox" name="categories[]" value="{{ $category->id }}"></input>
+                            </div>
+                        @endforeach
 
                         <x-label class="form-label mt-3" for="description" :value="__('Description')" />
                         <textarea class="form-control" type="text" rows=3 id="description" name="description">{{ $project->description }}</textarea>

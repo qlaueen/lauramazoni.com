@@ -51,9 +51,7 @@ class ProjectController extends Controller
           'link' => $request->link,
         ]);
         
-
         if($request->has('categories')) {
-            dd('test');
           	$project->categories()->attach($request->categories);
         } 
       
@@ -94,21 +92,26 @@ class ProjectController extends Controller
           'description'=>'required',
           'link'=>'required'
         ]);
+
         $image = $project->image; 
-          if($request->hasFile('image')) {
-            Storage::delete($project->image);
-            $image = $request->file('image')->store('public/projects');
-          }
+        if($request->hasFile('image')) {
+          Storage::delete($project->image);
+          $image = $request->file('image')->store('public/projects');
+        }
+
         $project->update([
           'name'=>$request->name,
+          'slug'=>$request->slug,
           'description'=>$request->description,
           'image'=>$image,
           'link'=>$request->link,
         ]);
 
+		// dd($request->categories);
         if($request->has('categories')) {
-          $project->categories()->sync($request->categories);
-        }
+			// dd($project->categories);
+          	$project->categories()->sync($request->categories);
+        } 
 
         return to_route('admin.projects.index');
     }
