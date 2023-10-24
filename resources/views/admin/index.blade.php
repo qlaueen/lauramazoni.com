@@ -3,7 +3,7 @@
     <section class="container">
         <h1 class="text-center">Admin Panel</h1>
         <div class="cards d-flex">
-            <div class="card m-3" style="width: 25rem;">
+            <div class="card m-2" style="width: 25rem;">
                 <div class="card-header text-center">
                     Projects
                 </div>
@@ -15,7 +15,7 @@
                     <a href="{{  route('admin.projects.index') }}" class="btn btn-primary">All</a>
                 </div>
             </div>
-            <div class="card m-3" style="width: 25rem;">
+            <div class="card m-2" style="width: 25rem;">
                 <div class="card-header text-center">
                     Categories
                 </div>
@@ -27,7 +27,7 @@
                     <a href="{{  route('admin.categories.index') }}" class="btn btn-primary">All</a>
                 </div>
             </div>
-            <div class="card m-3" style="width: 25rem;">
+            <div class="card m-2" style="width: 25rem;">
                 <div class="card-header text-center">
                     Live site
                 </div>

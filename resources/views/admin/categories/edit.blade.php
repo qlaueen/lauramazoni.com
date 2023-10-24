@@ -1,7 +1,7 @@
 <x-admin-layout>
   	<x-slot name="header"></x-slot>
 
-	<div class="container">
+	<div class="container mt-5">
 		<div class="card">
 			<div class="card-header text-end">
 				<a href="{{  route('admin.categories.index') }}">See All Categories</a>
