@@ -18,7 +18,7 @@
                         <x-input class="form-control"  id="email" type="email" name="email" :value="old('email')" required autofocus />
 
                         <!-- Password -->
-                        <x-label class="form-label mt-3" for="password" :value="__('Password')" />
+                        <x-label class="form-label" for="password" :value="__('Password')" />
                         <x-input class="form-control"  id="password" type="password" name="password" required autocomplete="current-password" />
                     
                         <!-- Remember Me -->
